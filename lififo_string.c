@@ -68,7 +68,7 @@ void pop_top(stack_t **stack, unsigned int line_number)
 
 
 /**
- * print_str - Prints a string.
+ * str_printing - Prints a string.
  * @stack: Pointer to a pointer
  * @ln: the line number of of the opcode.
  */

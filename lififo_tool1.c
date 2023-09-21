@@ -40,7 +40,7 @@ void file_opening(char *file_name)
 
 
 /**
- * nop - Does nothing.
+ * nop_fun - Does nothing.
  * @stack: Pointer to a pointer
  * @line_number: the line number of of the opcode.
  */
