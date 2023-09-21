@@ -35,7 +35,7 @@ void print_top(stack_t **stack, unsigned int line_number)
 
 /**
  * div_nodes - Adds the top two elements of the stack.
- * @stack: Pointer to a pointer 
+ * @stack: Pointer to a pointer
  * @line_number: line number.
  */
 void div_nodes(stack_t **stack, unsigned int line_number)
