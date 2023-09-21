@@ -1,11 +1,11 @@
 #include "monty.h"
 
 /**
- * sub_nodes - Adds two stacks.
+ * sub_n - Adds two stacks.
  * @stack: Pointer to a pointer.
  * @line_number: number of line.
  */
-void sub_nodes(stack_t **stack, unsigned int line_number)
+void sub_n(stack_t **stack, unsigned int line_number)
 {
 	int sum;
 
@@ -34,11 +34,11 @@ void print_top(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * div_nodes - Adds the top two elements of the stack.
+ * div_n - Adds the top two elements of the stack.
  * @stack: Pointer to a pointer
  * @line_number: line number.
  */
-void div_nodes(stack_t **stack, unsigned int line_number)
+void div_n(stack_t **stack, unsigned int line_number)
 {
 	int sum;
 
@@ -55,11 +55,11 @@ void div_nodes(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * mul_nodes - miltply the top two elements of the stack.
+ * mul_n - miltply the top two elements of the stack.
  * @stack: Pointer to a pointer
  * @line_number: line numbers
  */
-void mul_nodes(stack_t **stack, unsigned int line_number)
+void mul_n(stack_t **stack, unsigned int line_number)
 {
 	int sum;
 
@@ -74,11 +74,11 @@ void mul_nodes(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * add_nodes - top two node will be added
+ * add_n - top two node will be added
  * @stack: Pointer to a pointer
  * @line_number: line number of of the opcode.
  */
-void add_nodes(stack_t **stack, unsigned int line_number)
+void add_n(stack_t **stack, unsigned int line_number)
 {
 	int sum;
 

@@ -1,11 +1,11 @@
 #include "monty.h"
 
 /**
- * swap_nodes - top two elements of the stack will be swaped.
+ * node_swaping - top two elements of the stack will be swaped.
  * @stack: Pointer to a pointer
  * @line_number: the line number of of the opcode.
  */
-void swap_nodes(stack_t **stack, unsigned int line_number)
+void node_swaping(stack_t **stack, unsigned int line_number)
 {
 	stack_t *tmp;
 
@@ -22,17 +22,17 @@ void swap_nodes(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * open_file - opens a file
+ * file_opening - opens a file
  * @file_name: the file namepath
  * Return: void
  */
 
-void open_file(char *file_name)
+void file_opening(char *file_name)
 {
 	FILE *fd = fopen(file_name, "r");
 
 	if (file_name == NULL || fd == NULL)
-		err(2, file_name);
+		pri_err(2, file_name);
 
 	read_file(fd);
 	fclose(fd);
@@ -44,27 +44,27 @@ void open_file(char *file_name)
  * @stack: Pointer to a pointer
  * @line_number: the line number of of the opcode.
  */
-void nop(stack_t **stack, unsigned int line_number)
+void nop_fun(stack_t **stack, unsigned int line_number)
 {
 	(void)stack;
 	(void)line_number;
 }
 
 /**
- * parse_line - Separates
+ * line_parsing - Separates
  * @buffer: line from the give file
  * @line_number: line number
  * @format:  storage format.
  * Return: Returns 0 if the opcode is stack. 1 if queue.
  */
 
-int parse_line(char *buffer, int line_number, int format)
+int line_parsing(char *buffer, int line_number, int format)
 {
 	char *opcode, *value;
 	const char *delim = "\n ";
 
 	if (buffer == NULL)
-		err(4);
+		pri_err(4);
 
 	opcode = strtok(buffer, delim);
 	if (opcode == NULL)
@@ -81,14 +81,14 @@ int parse_line(char *buffer, int line_number, int format)
 }
 
 /**
- * call_fun - Calls the function.
+ * fun_calling - Calls the function.
  * @func: Pointer to the function
  * @op: string intems opsode
  * @val: string interms of a numeric value.
  * @ln: line numeber
  * @format: Format specifier.
  */
-void call_fun(op_func func, char *op, char *val, int ln, int format)
+void fun_calling(op_func func, char *op, char *val, int ln, int format)
 {
 	stack_t *node;
 	int flag;
@@ -103,11 +103,11 @@ void call_fun(op_func func, char *op, char *val, int ln, int format)
 			flag = -1;
 		}
 		if (val == NULL)
-			err(5, ln);
+			pri_err(5, ln);
 		for (i = 0; val[i] != '\0'; i++)
 		{
 			if (isdigit(val[i]) == 0)
-				err(5, ln);
+				pri_err(5, ln);
 		}
 		node = create_node(atoi(val) * flag);
 		if (format == 0)

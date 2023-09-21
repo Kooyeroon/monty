@@ -14,7 +14,7 @@ void read_file(FILE *fd)
 
 	for (line_number = 1; getline(&buffer, &len, fd) != -1; line_number++)
 	{
-		format = parse_line(buffer, line_number, format);
+		format = line_parsing(buffer, line_number, format);
 	}
 	free(buffer);
 }
@@ -37,16 +37,16 @@ void find_func(char *opcode, char *value, int ln, int format)
 		{"pall", print_stack},
 		{"pint", print_top},
 		{"pop", pop_top},
-		{"nop", nop},
-		{"swap", swap_nodes},
-		{"add", add_nodes},
-		{"sub", sub_nodes},
-		{"div", div_nodes},
-		{"mul", mul_nodes},
+		{"nop", nop_fun},
+		{"swap", node_swaping},
+		{"add", add_n},
+		{"sub", sub_n},
+		{"div", div_n},
+		{"mul", mul_n},
 		{"mod", mod_nodes},
-		{"pchar", print_char},
-		{"pstr", print_str},
-		{"rotl", rotl},
+		{"pchar", char_printing},
+		{"pstr", str_printing},
+		{"rotl", rot_fun},
 		{"rotr", rotr},
 		{NULL, NULL}
 	};
@@ -58,10 +58,10 @@ void find_func(char *opcode, char *value, int ln, int format)
 	{
 		if (strcmp(opcode, func_list[i].opcode) == 0)
 		{
-			call_fun(func_list[i].f, opcode, value, ln, format);
+			fun_calling(func_list[i].f, opcode, value, ln, format);
 			flag = 0;
 		}
 	}
 	if (flag == 1)
-		err(3, ln, opcode);
+		pri_err(3, ln, opcode);
 }

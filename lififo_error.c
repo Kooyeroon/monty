@@ -1,12 +1,12 @@
 #include "monty.h"
 
 /**
- * string_err - used to handles errors.
+ * string_error - used to handles errors.
  * @error_code: error codes includes the following:
  * (10) ~> number inside a node is outside ASCII bounds.
  * (11) ~> stack is to be  empty.
  */
-void string_err(int error_code, ...)
+void string_error(int error_code, ...)
 {
 	va_list ag;
 	int l_num;
@@ -51,7 +51,7 @@ void add_to_stack(stack_t **new_node, __attribute__((unused))unsigned int ln)
 }
 
 /**
- * err - Prints appropiate error messages determined by their error code.
+ * pri_err - Prints appropiate error messages determined by their error code.
  * @error_code: The error codes are the following:
  * (1) => user does not give any file or more than one file to the program.
  * (2) => file provided is not a file that can be opened or read.
@@ -62,7 +62,7 @@ void add_to_stack(stack_t **new_node, __attribute__((unused))unsigned int ln)
  * (7) => stack it empty for pop.
  * (8) => stack is too short for operation.
  */
-void err(int error_code, ...)
+void pri_err(int error_code, ...)
 {
 	va_list ag;
 	char *op;

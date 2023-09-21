@@ -44,32 +44,32 @@ typedef void (*op_func)(stack_t **, unsigned int);
 
 
 /*function prototypes*/
-void add_nodes(stack_t **, unsigned int);
-void sub_nodes(stack_t **, unsigned int);
-void div_nodes(stack_t **, unsigned int);
-void mul_nodes(stack_t **, unsigned int);
+void add_n(stack_t **, unsigned int);
+void sub_n(stack_t **, unsigned int);
+void div_n(stack_t **, unsigned int);
+void mul_n(stack_t **, unsigned int);
 void mod_nodes(stack_t **, unsigned int);
 stack_t *create_node(int n);
 void free_nodes(void);
 void print_stack(stack_t **, unsigned int);
 void add_to_stack(stack_t **, unsigned int);
 void add_to_queue(stack_t **, unsigned int);
-void print_char(stack_t **, unsigned int);
-void print_str(stack_t **, unsigned int);
-void rotl(stack_t **, unsigned int);
-void open_file(char *file_name);
-int parse_line(char *buffer, int line_number, int format);
+void char_printing(stack_t **, unsigned int);
+void str_printing(stack_t **, unsigned int);
+void rot_fun(stack_t **, unsigned int);
+void file_opening(char *file_name);
+int line_parsing(char *buffer, int line_number, int format);
 void read_file(FILE *);
 int len_chars(FILE *);
 void find_func(char *, char *, int, int);
-void err(int error_code, ...);
+void pri_err(int error_code, ...);
 void more_err(int error_code, ...);
-void string_err(int error_code, ...);
+void string_error(int error_code, ...);
 void rotr(stack_t **, unsigned int);
-void call_fun(op_func, char *, char *, int, int);
+void fun_calling(op_func, char *, char *, int, int);
 void print_top(stack_t **, unsigned int);
 void pop_top(stack_t **, unsigned int);
-void nop(stack_t **, unsigned int);
-void swap_nodes(stack_t **, unsigned int);
+void nop_fun(stack_t **, unsigned int);
+void node_swaping(stack_t **, unsigned int);
 
 #endif

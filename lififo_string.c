@@ -25,11 +25,11 @@ void rotr(stack_t **stack, __attribute__((unused))unsigned int ln)
 }
 
 /**
- * rotl - Rotates the first node.
+ * rot_fun - Rotates the first node.
  * @stack: Pointer to a pointer
  * @ln: the line number of of the opcode.
  */
-void rotl(stack_t **stack, __attribute__((unused))unsigned int ln)
+void rot_fun(stack_t **stack, __attribute__((unused))unsigned int ln)
 {
 	stack_t *tmp;
 
@@ -72,7 +72,7 @@ void pop_top(stack_t **stack, unsigned int line_number)
  * @stack: Pointer to a pointer
  * @ln: the line number of of the opcode.
  */
-void print_str(stack_t **stack, __attribute__((unused))unsigned int ln)
+void str_printing(stack_t **stack, __attribute__((unused))unsigned int ln)
 {
 	int ascii;
 	stack_t *tmp;
@@ -96,19 +96,19 @@ void print_str(stack_t **stack, __attribute__((unused))unsigned int ln)
 }
 
 /**
- * print_char - Prints the Ascii value.
+ * char_printing - Prints the Ascii value.
  * @stack: Pointer to a pointer
  * @line_number: the line number of of the opcode.
  */
-void print_char(stack_t **stack, unsigned int line_number)
+void char_printing(stack_t **stack, unsigned int line_number)
 {
 	int ascii;
 
 	if (stack == NULL || *stack == NULL)
-		string_err(11, line_number);
+		string_error(11, line_number);
 
 	ascii = (*stack)->n;
 	if (ascii < 0 || ascii > 127)
-		string_err(10, line_number);
+		string_error(10, line_number);
 	printf("%c\n", ascii);
 }
